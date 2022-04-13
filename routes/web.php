@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/","MainController@top");
+Route::get("menu","MainController@menu");
+
+Route::get("instagram","InstagramController@index");
