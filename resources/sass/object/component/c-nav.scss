@@ -1,0 +1,43 @@
+.c-nav {
+
+    &__header {
+        position: absolute;
+        right: 30px;
+        display: flex;
+
+        &_container{
+            display:flex;
+            margin-right:100px;
+        }
+
+        &_list{
+            cursor: pointer;
+            padding:20px 30px;
+            display:block;
+            text-align: center;
+            position:relative;
+            transition: all 0.2s;
+
+            &::after{
+                content: "";
+                width:50%;
+                height:3px;
+                background:$color-bg__primary;
+                position:absolute;
+                left:25%;
+                bottom:10px;
+                visibility: hidden;
+                transition: all 0.3s;
+            }
+
+            &:hover{
+                color:$color-font__primary;
+            }
+
+            &:hover::after{
+                visibility: visible;
+                bottom:5px;
+            }
+        }
+    }
+}

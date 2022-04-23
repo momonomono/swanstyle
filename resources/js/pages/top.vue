@@ -1,6 +1,12 @@
 <template>
-    <div class="c-card__background u-bg__top">
-        
+    <div>
+        <div class="c-card__top">
+
+        </div>
+
+        <div class="c-card__top_menu">
+            
+        </div>
     </div>
 </template>
 

@@ -9,7 +9,11 @@
 </head>
 <body>
     <div id="app">
-        
+        <header-component></header-component>
+
+        <button class="c-button__reserve">
+            予約
+        </button>
         @yield('body')
     </div>
 </body>
