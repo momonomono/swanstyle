@@ -11,7 +11,11 @@
 </template>
 
 <script>
-    export default{
+    import Title from "../components/Title.vue";
 
+    export default{
+        components :{
+            Title
+        }
     }
 </script>
