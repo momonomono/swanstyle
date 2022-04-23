@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Title title="Hello World"/>
+        <Title title="Menu"/>
     </div>
 </template>
 

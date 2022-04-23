@@ -636,7 +636,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("h2", [_vm._v(_vm._s(_vm.title))])])
+  return _c("div", { staticClass: "c-card__title" }, [
+    _c("h2", { staticClass: "c-text__title" }, [_vm._v(_vm._s(_vm.title))]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -684,7 +686,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Title", { attrs: { title: "Hello World" } })], 1)
+  return _c("div", [_c("Title", { attrs: { title: "Menu" } })], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -1,6 +1,6 @@
 <template>
-    <div >
-        <h2>{{ title }}</h2>
+    <div class="c-card__title">
+        <h2 class="c-text__title">{{ title }}</h2>
     </div>
 </template>
 

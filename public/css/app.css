@@ -454,3 +454,32 @@ th {
   font-weight: bold;
 }
 
+.c-card__title {
+  display: flex;
+  justify-content: center;
+}
+
+.c-text__title {
+  color: #008db1;
+  font-size: 34px;
+  width: auto;
+  position: relative;
+  padding: 5px 0;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.c-text__title:before {
+  content: "";
+  background: #008db1;
+  width: 50%;
+  height: 4px;
+  position: absolute;
+  bottom: 0px;
+  left: 25%;
+}
+
+.u-align__text--center {
+  text-align: center;
+}
+
