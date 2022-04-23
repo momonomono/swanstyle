@@ -1,11 +1,15 @@
 <template>
-    <div class="c-card__background u-bg__top">
-        
+    <div>
+        <Title title="Hello World"/>
     </div>
 </template>
 
 <script>
-    export default{
+    import Title from "../components/Title.vue";
 
+    export default{
+        components :{
+            Title
+        }
     }
 </script>
