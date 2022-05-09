@@ -1,0 +1,48 @@
+.c-card {
+    
+    &__cover {
+        width: 100%;
+        height: 100vh;
+    }
+
+    &__header {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        transition: all 0.5s;
+        z-index:2;
+
+        &--scroll{
+            background:$color-bg__header;
+            z-index:20;
+        }
+
+        &--top{
+            position: fixed;
+        }
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__slider{
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+    }
+
+    &__content{
+        width:100%;
+        height:450px;
+        display:flex;
+    }
+
+    &__introduct{
+        width:50%;
+        padding:100px 30px;
+        box-sizing:border-box;
+    }
+}

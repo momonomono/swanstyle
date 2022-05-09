@@ -1,0 +1,30 @@
+.p-image{
+
+    &__top {
+        width:100%;
+        height:auto;
+        z-index:1;
+    }
+    
+
+    &__menu{
+        display: block;
+        width:50%;
+        height:auto;
+    }
+
+    &__access{
+        width:50%;
+        height:450px;
+    }
+
+    &__instagram{
+        width:150px;
+        height:150px;
+        transition: transform 0.5s;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

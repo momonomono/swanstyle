@@ -11,10 +11,11 @@
     <div id="app">
         <header-component></header-component>
 
-        <button class="c-button__reserve">
-            予約
-        </button>
-        @yield('body')
+        <div class="l-main u-bg__main">
+            @yield('body')
+        </div>
+
+        <footer-component></footer-component>
     </div>
 </body>
 <script src="{{ asset('js/app.js') }}"></script>

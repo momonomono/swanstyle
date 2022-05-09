@@ -1,6 +1,6 @@
 <template>
     <div class="c-card__title">
-        <h2 class="c-text__title">{{ title }}</h2>
+        <h2 class="p-text__title">{{ title }}</h2>
     </div>
 </template>
 
@@ -8,6 +8,6 @@
     export default{
         props : {
             title : String
-        }
+        },
     }
 </script>

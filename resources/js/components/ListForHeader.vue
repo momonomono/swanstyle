@@ -1,5 +1,5 @@
 <template>
-    <li class="c-nav__header_list" @click="clickJumpPage(url)">
+    <li class="p-text__header" @click="clickJumpPage(url)">
         {{ title }}
     </li>
 </template>

@@ -1,0 +1,9 @@
+.p-card{
+
+    &__footer{
+        width:100%;
+        height:$height-footer;
+        background:$color-bg__footer;
+        color:$color-bg__footer;
+    }
+}

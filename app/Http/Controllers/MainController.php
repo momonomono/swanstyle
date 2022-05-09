@@ -16,4 +16,19 @@ class MainController extends Controller
 
         return view('menu');
     }
+
+    public function contact(){
+
+        return view('contact');
+    }
+
+    public function access(){
+
+        return view('access');
+    }
+
+    public function news(){
+
+        return view('news');
+    }
 }

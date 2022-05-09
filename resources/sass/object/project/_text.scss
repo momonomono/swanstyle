@@ -1,0 +1,63 @@
+.p-text {
+    &__header {
+        cursor: pointer;
+        padding: 20px 30px;
+        display: block;
+        text-align: center;
+        position: relative;
+        transition: all 0.2s;
+
+        &::after {
+            content: "";
+            width: 50%;
+            height: 3px;
+            background: $color-bg__primary;
+            position: absolute;
+            left: 25%;
+            bottom: 10px;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        &:hover {
+            color: $color-font__primary;
+        }
+
+        &:hover::after {
+            visibility: visible;
+            bottom: 5px;
+        }
+    }
+
+    &__title{
+        color:$color-bg__primary;
+        font-size:34px;
+        width:auto;
+        position: relative;
+        padding:10px 0;
+        font-weight:800;
+        letter-spacing:3px;
+
+        &:before{
+            content:"";
+            background:$color-bg__primary;
+            width:50%;
+            height:4px;
+            position:absolute;
+            bottom:0px;
+            left:25%;
+        }
+    }
+
+    &__instagram{
+        color:$color-bg__primary;
+        font-size:30px;
+        line-height:100px;
+    }
+
+    &__footer{
+        color:#ffffff;
+        text-align: center;
+        line-height:$height-footer;
+    }
+}

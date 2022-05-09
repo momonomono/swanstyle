@@ -1,21 +1,39 @@
 <template>
     <div>
-        <div class="c-card__top">
-
+        <div>
+            <img class="p-image__top" src="/img/room_1.jpeg">
         </div>
 
-        <div class="c-card__top_menu">
-            
-        </div>
+        <!-- メニュー -->
+        <Menu />
+
+        <!-- SNS -->
+        <Sns :myid="myid"/>
+
+        <!-- アクセス -->
+        <Access />
+
     </div>
 </template>
 
 <script>
-    import Title from "../components/Title.vue";
+    import Menu from "../components/Top/Menu.vue";
+    import Sns from "../components/Top/SNS.vue";
+    import Access from "../components/Top/Access.vue";
 
     export default{
+        props :{
+            myid : String,
+        },
+        methods :{
+            clickJumpMainPage(){
+                window.location.href = "/";
+            }
+        },
         components :{
-            Title
+            Sns,
+            Menu,
+            Access,
         }
     }
 </script>

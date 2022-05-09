@@ -13,5 +13,8 @@
 
 Route::get("/","MainController@top");
 Route::get("menu","MainController@menu");
+Route::get('/contact',"MainController@contact");
+Route::get('/access',"MainController@access");
+Route::get('/news','MainController@news');
 
 Route::get("instagram","InstagramController@index");
