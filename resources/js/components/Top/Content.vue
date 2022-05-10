@@ -1,15 +1,27 @@
 <template>
-  <div class="u-mt-100 l-container">
-    <Title title="MENU" />
+  <div class="l-container">
+    <div class="p-card__content">
+      <Title :title="title"/>
 
-    
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
-    import Title from "../Title.vue";
+    import Title from "../TitleForTop.vue";
 
     export default{
+        props :{
+          title :{
+            type : String,
+            required : false
+          },
+          myid :{
+            type : String,
+            required : false
+          }
+        },
         components :{
             Title
         }

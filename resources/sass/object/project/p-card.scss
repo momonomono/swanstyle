@@ -1,0 +1,25 @@
+.p-card{
+
+    &__content{
+        padding-bottom:300px;
+    }
+
+    &__title{
+        &--top{
+            display: flex;
+            justify-content: center;
+            margin-bottom:100px;
+        }
+    }
+
+    &__access{
+        width:100%;
+    }
+
+    &__footer{
+        width:100%;
+        height:$height-footer;
+        background:$color-bg__footer;
+        color:$color-bg__footer;
+    }
+}

@@ -1,0 +1,11 @@
+.js-header{
+
+    &__scroll{
+        background:$color-bg__header;
+        z-index:20px;
+    }
+    
+    &__relative{
+        position:relative;
+    }
+}

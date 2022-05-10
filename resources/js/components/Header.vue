@@ -1,5 +1,5 @@
 <template>
-    <div class="c-card__header" :class="{'c-card__header--scroll':headerFlg,'c-card__header--top':isTopPage}">
+    <div class="c-card__header" :class="">
         <img @click="clickJumpMainPage" class="p-logo__main" src="img/swanstyle.png">
 
         <nav class="c-nav__header">
@@ -15,23 +15,28 @@
 
 <script>
     import List from "./ListForHeader.vue";
-
     export default{
         data : function(){
             return{
                 scrollY : 0,
                 headerFlg : false,
-                isTopPage : true,
-                pagePath : ""
+                pagePath : window.location.pathname
             }
         },
         mounted(){
             window.addEventListener('scroll',this.changeHeaderBackground);
         },
+        computed :{
+            headerObject(){
+                return {
+                    'c-card__header--scroll' : this.headerFlg,
+                    'c-card__header--top' : this.isTopPage
+                }
+            }
+        },
         methods :{
             changeHeaderBackground(){
                 this.scrollY = window.scrollY;
-
                 this.headerFlg = this.scrollY > 120 ? true : false ;
             },
             clickJumpMainPage(){

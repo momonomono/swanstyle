@@ -482,6 +482,10 @@ th {
   min-height: 100vh;
 }
 
+.l-content {
+  padding-bottom: 300px;
+}
+
 .l-container {
   width: 80%;
   margin: 0 auto;
@@ -499,20 +503,7 @@ th {
   align-items: center;
   transition: all 0.5s;
   z-index: 2;
-}
-
-.c-card__header--scroll {
-  background: #f0f0f0;
-  z-index: 20;
-}
-
-.c-card__header--top {
   position: fixed;
-}
-
-.c-card__title {
-  display: flex;
-  justify-content: center;
 }
 
 .c-card__slider {
@@ -523,14 +514,7 @@ th {
 
 .c-card__content {
   width: 100%;
-  height: 450px;
   display: flex;
-}
-
-.c-card__introduct {
-  width: 50%;
-  padding: 100px 30px;
-  box-sizing: border-box;
 }
 
 .c-image__logo {
@@ -551,10 +535,29 @@ th {
   display: flex;
 }
 
-.c-text__main {
+.c-text__title {
+  color: #008db1;
+  font-size: 3em;
+}
+
+.c-text__sentence {
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
+}
+
+.p-card__content {
+  padding-bottom: 300px;
+}
+
+.p-card__title--top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.p-card__access {
+  width: 100%;
 }
 
 .p-card__footer {
@@ -564,10 +567,15 @@ th {
   color: #000000;
 }
 
+.p-gird__main {
+  padding-top: 100px;
+}
+
 .p-image__top {
   width: 100%;
   height: auto;
   z-index: 1;
+  padding-bottom: 300px;
 }
 
 .p-image__menu {
@@ -577,7 +585,7 @@ th {
 }
 
 .p-image__access {
-  width: 50%;
+  width: 100%;
   height: 450px;
 }
 
@@ -635,26 +643,6 @@ th {
   bottom: 5px;
 }
 
-.p-text__title {
-  color: #008db1;
-  font-size: 34px;
-  width: auto;
-  position: relative;
-  padding: 10px 0;
-  font-weight: 800;
-  letter-spacing: 3px;
-}
-
-.p-text__title:before {
-  content: "";
-  background: #008db1;
-  width: 50%;
-  height: 4px;
-  position: absolute;
-  bottom: 0px;
-  left: 25%;
-}
-
 .p-text__instagram {
   color: #008db1;
   font-size: 30px;
@@ -667,10 +655,29 @@ th {
   line-height: 30px;
 }
 
-.p-top {
-  background-image: url("/img/room_1.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
+.p-top__access {
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.p-top__title {
+  color: #008db1;
+  font-size: 34px;
+  width: auto;
+  position: relative;
+  padding: 10px 0;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.p-top__title:before {
+  content: "";
+  background: #008db1;
+  width: 50%;
+  height: 4px;
+  position: absolute;
+  bottom: 0px;
+  left: 25%;
 }
 
 .u-bg__main {

@@ -1,0 +1,13 @@
+.c-text{
+
+    &__title{
+        color:$color-font__primary;
+        font-size:$size_ft__3x;
+    }
+
+    &__sentence{
+        font-weight: 500;
+        font-size:20px;
+        line-height:30px;
+    }
+}

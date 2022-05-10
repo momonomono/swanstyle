@@ -1,0 +1,27 @@
+.p-top{
+
+    &__access{
+        padding:50px 20px;
+        box-sizing: border-box;
+    }
+
+    &__title{
+        color:$color-bg__primary;
+        font-size:34px;
+        width:auto;
+        position: relative;
+        padding:10px 0;
+        font-weight:800;
+        letter-spacing:3px;
+
+        &:before{
+            content:"";
+            background:$color-bg__primary;
+            width:50%;
+            height:4px;
+            position:absolute;
+            bottom:0px;
+            left:25%;
+        }
+    }
+}

@@ -1,22 +1,23 @@
 <template>
     <div>
-        <div>
-            <img class="p-image__top" src="/img/room_1.jpeg">
-        </div>
+        <img class="p-image__top" src="/img/room_1.jpg">
 
-        <!-- メニュー -->
-        <Menu />
+        <Content title="MENU">
+            <Menu />
+        </Content>
 
-        <!-- SNS -->
-        <Sns :myid="myid"/>
+        <Content title="ACCESS">
+            <Access />
+        </Content>
 
-        <!-- アクセス -->
-        <Access />
-
+        <Content title="SNS">
+            <Sns :myid="myid"/>
+        </Content>
     </div>
 </template>
 
 <script>
+    import Content from "../components/Top/Content.vue";
     import Menu from "../components/Top/Menu.vue";
     import Sns from "../components/Top/SNS.vue";
     import Access from "../components/Top/Access.vue";
@@ -31,6 +32,7 @@
             }
         },
         components :{
+            Content,
             Sns,
             Menu,
             Access,

@@ -1,30 +1,23 @@
 <template>
-  <div class="l-container">
-    <Title title="SNS" />
+  <article class="u-align__center">
+    
+    <Detail :myid="myid"/>
 
-    <article class="u-align__center">
-      
-      <article class="u-mb-100">
-        <img class="p-logo__instagram" src="/img/instagram.png" />
-        <p class="p-text__instagram">{{ myid }}</p>
-      </article>
-
-      <Slider />
-    </article>
-  </div>
+    <Slider />
+  </article>
 </template>
 
 <script>
-import Title from "../Title.vue";
+import Detail from "./SNSDetail.vue";
 import Slider from "./SNSSlider.vue";
 
 export default {
-  props :{
-    myid : String
+  props: {
+    myid: String,
   },
   components: {
-    Title,
-    Slider
-  }
+    Detail,
+    Slider,
+  },
 };
 </script>

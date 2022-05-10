@@ -3,7 +3,7 @@
     <img v-for="number in test"
         :key="number"
         class="p-image__instagram" 
-        src="/img/no_image_square.jpeg"
+        src="/img/no_image_square.jpg"
     />
   </article>
 </template>
