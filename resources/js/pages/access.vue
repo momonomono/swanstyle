@@ -1,18 +1,29 @@
 <template>
     <div class="l-container">
-        <div class="p-gird__main">
+        <Space />
+
+        <article class="p-gird__main">
            
-           <h1 class="c-text__title">ACCESS</h1>
-        </div>
+           <div class="u-align__center">
+                <h1 class="c-text__title">ACCESS</h1>
+           </div>
+
+           <article>
+               <div>
+
+               </div>
+           </article>
+
+        </article>
     </div>
 </template>
 
 <script>
-    import Title from "../components/TitleForTop.vue";
+    import Space from "../components/Header/HeaderSpace.vue";
 
     export default{
         components :{
-            Title
+            Space
         }
     }
 </script>

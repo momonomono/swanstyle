@@ -1,6 +1,17 @@
 <template>
   <article class="p-card__access">
     <article class="p-top__access">
+
+      <Detail>
+        <template #heading>
+          <p class="c-text__sentence">住所</p>
+        </template>
+
+        <template>
+          
+        </template>
+      </Detail>
+
       <div>
         <p class="c-text__sentence">〒507-0071</p>
         <p class="c-text__sentence">
@@ -29,7 +40,27 @@
 </template>
 
 <script>
+import Detail from "../Access/Detail.vue";
+
 export default {
-  
+  data : function(){
+    return {
+       shop_detail :[
+         {
+           heading : "住所",
+            description :[
+              "〒507-0071",
+              "岐阜県多治見市旭ケ丘10丁目6-15（美濃焼卸団地内"
+            ],
+         },
+         {
+           heading : ""
+         }
+       ]
+    }
+  },
+  components :{
+    Detail
+  }
 };
 </script>

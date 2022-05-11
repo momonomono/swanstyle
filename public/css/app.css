@@ -476,6 +476,7 @@ th {
 
 .l-header {
   width: 100%;
+  height: 100px;
 }
 
 .l-main {
@@ -494,16 +495,6 @@ th {
 .c-card__cover {
   width: 100%;
   height: 100vh;
-}
-
-.c-card__header {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  transition: all 0.5s;
-  z-index: 2;
-  position: fixed;
 }
 
 .c-card__slider {
@@ -569,6 +560,14 @@ th {
 
 .p-gird__main {
   padding-top: 100px;
+}
+
+.p-gird__header {
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+  z-index: 2;
+  position: fixed;
 }
 
 .p-image__top {
@@ -1094,5 +1093,10 @@ th {
 
 .u-align__center {
   text-align: center;
+}
+
+.js-header__getColor {
+  background: #f0f0f0;
+  z-index: 20px;
 }
 

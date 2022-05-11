@@ -1,5 +1,5 @@
 <template>
-    <div class="c-card__header" :class="">
+    <div class="l-header p-gird__header" :class="headerObject">
         <img @click="clickJumpMainPage" class="p-logo__main" src="img/swanstyle.png">
 
         <nav class="c-nav__header">
@@ -29,14 +29,20 @@
         computed :{
             headerObject(){
                 return {
-                    'c-card__header--scroll' : this.headerFlg,
-                    'c-card__header--top' : this.isTopPage
+                    'js-header__getColor' : this.checkGetColor,
                 }
+            },
+            checkPathName(){
+                return this.pagePath !== "/"
+            },
+            checkGetColor(){
+                return this.headerFlg || this.checkPathName;
             }
         },
         methods :{
             changeHeaderBackground(){
                 this.scrollY = window.scrollY;
+                
                 this.headerFlg = this.scrollY > 120 ? true : false ;
             },
             clickJumpMainPage(){
