@@ -1,8 +1,8 @@
 <template>
-  <article class="c-card__content u-bg__white">
+  <article class="">
     <img src="/img/esthetic_2.jpg" class="p-image__menu" />
 
-    <article class="c-card__introduct">
+    <article class="">
       <p></p>
     </article>
   </article>

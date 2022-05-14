@@ -33,7 +33,9 @@
   "directories": {
     "test": "tests"
   },
-  "dependencies": {},
+  "dependencies": {
+    "js-cookie": "^3.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/momonomono/swanstyle.git"

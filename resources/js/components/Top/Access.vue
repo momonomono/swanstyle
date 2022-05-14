@@ -2,34 +2,25 @@
   <article class="p-card__access">
     <article class="p-top__access">
 
-      <Detail>
+
+      <Detail v-for="(detail,index) in changeDetailsJson" :key="index">
+        
         <template #heading>
-          <p class="c-text__sentence">住所</p>
+          <p class="c-text__sentence">{{ detail.heading }}</p>
         </template>
 
-        <template>
-          
+
+
+        <template #description>
+          <p
+            class="c-text__sentence"
+            v-for="(text,index) in splitDescript(detail.description)"
+            :key="index"
+          >{{ text }}</p>
         </template>
+
       </Detail>
-
-      <div>
-        <p class="c-text__sentence">〒507-0071</p>
-        <p class="c-text__sentence">
-          岐阜県多治見市旭ケ丘10丁目6-15（美濃焼卸団地内）
-        </p>
-      </div>
-
-      <div class="sententce">
-        <p class="c-text__main">TEL 0572-26-9516</p>
-      </div>
-
-      <div class="sentence">
-        <p class="c-text__main">営業時間 10:00 ~ 18:00</p>
-      </div>
-
-      <div class="sentence">
-        <p class="c-text__main">定休日 土日祝日</p>
-      </div>
+      
     </article>
 
     <iframe
@@ -43,23 +34,23 @@
 import Detail from "../Access/Detail.vue";
 
 export default {
-  data : function(){
-    return {
-       shop_detail :[
-         {
-           heading : "住所",
-            description :[
-              "〒507-0071",
-              "岐阜県多治見市旭ケ丘10丁目6-15（美濃焼卸団地内"
-            ],
-         },
-         {
-           heading : ""
-         }
-       ]
+  props: {
+    details: {
+      type: String,
+      required: true
     }
   },
-  components :{
+  computed: {
+    changeDetailsJson() {
+      return JSON.parse(this.details);
+    }
+  },
+  methods: {
+    splitDescript(str) {
+      return str.split(",");
+    }
+  },
+  components: {
     Detail
   }
 };

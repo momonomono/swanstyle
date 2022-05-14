@@ -4,5 +4,5 @@
 
 @section('body')
         
-        <access-component></access-component>
+        <access-component details="{{ $details }}"></access-component>
 @endsection

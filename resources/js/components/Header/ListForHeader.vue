@@ -15,10 +15,13 @@
 
                 if(url == "access"){
 
+                    document.cookie = "isSwanstyleAccessFlg=true";
+                    window.location.href="/";
+                    
                 }else{
                     window.location.href = url
                 }
-            }
+            },
         }
     }
 </script>

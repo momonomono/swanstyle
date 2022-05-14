@@ -9,8 +9,8 @@
            </div>
 
            <article>
-               <div>
-
+               <div v-for="(detail,index) in changeJson" :key="index">
+                   {{ detail.heading }}
                </div>
            </article>
 
@@ -22,6 +22,16 @@
     import Space from "../components/Header/HeaderSpace.vue";
 
     export default{
+        props :{
+            details :{
+                required: true
+            }
+        },
+        computed :{
+            changeJson(){
+                return JSON.parse(this.details);
+            }
+        },
         components :{
             Space
         }

@@ -503,9 +503,20 @@ th {
   justify-content: space-between;
 }
 
+.c-card__halfBox {
+  width: 50%;
+}
+
 .c-card__content {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   display: flex;
+  justify-content: space-between;
+}
+
+.c-gird__centerd {
+  display: flex;
+  justify-content: space-between;
 }
 
 .c-image__logo {
@@ -533,7 +544,7 @@ th {
 
 .c-text__sentence {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
 }
 

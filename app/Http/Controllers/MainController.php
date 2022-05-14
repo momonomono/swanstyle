@@ -3,13 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Detail;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
     
     public function top(){
 
-        return view("top");
+        $details = [
+            'details' => Detail::get()
+        ];
+
+        return view("top",$details);
     }
 
     public function menu(){
@@ -24,7 +30,11 @@ class MainController extends Controller
 
     public function access(){
 
-        return view('access');
+        $details = Detail::all();
+
+        return view('access',[
+            'details' => $details
+        ]);
     }
 
     public function news(){

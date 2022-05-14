@@ -11,8 +11,14 @@
         justify-content: space-between;
     }
 
+    &__halfBox{
+        width:50%;
+    }
+
     &__content{
-        width:100%;
+        width: 70%;
+        margin:0 auto;
         display:flex;
+        justify-content: space-between;
     }
 }

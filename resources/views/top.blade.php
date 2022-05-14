@@ -4,5 +4,8 @@
 
 @section('body')
     
-    <top-component myid="{{ env('INSTAGRAM_ID') }}"></top-component>
+    <top-component 
+        myid = "{{ env('INSTAGRAM_ID') }}"
+        details = "{{ $details }}" 
+    ></top-component>
 @endsection

@@ -237,7 +237,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     clickJumpPage: function clickJumpPage(url) {
-      if (url == "access") {} else {
+      if (url == "access") {
+        document.cookie = "isSwanstyleAccessFlg=true";
+        window.location.href = "/";
+      } else {
         window.location.href = url;
       }
     }
@@ -288,26 +291,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      shop_detail: [{
-        heading: "住所",
-        description: ["〒507-0071", "岐阜県多治見市旭ケ丘10丁目6-15（美濃焼卸団地内"]
-      }, {
-        heading: ""
-      }]
-    };
+  props: {
+    details: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    changeDetailsJson: function changeDetailsJson() {
+      return JSON.parse(this.details);
+    }
+  },
+  methods: {
+    splitDescript: function splitDescript(str) {
+      return str.split(",");
+    }
   },
   components: {
     Detail: _Access_Detail_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -521,6 +521,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    details: {
+      required: true
+    }
+  },
+  computed: {
+    changeJson: function changeJson() {
+      return JSON.parse(this.details);
+    }
+  },
   components: {
     Space: _components_Header_HeaderSpace_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -598,6 +608,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Top_Menu_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Top/Menu.vue */ "./resources/js/components/Top/Menu.vue");
 /* harmony import */ var _components_Top_SNS_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Top/SNS.vue */ "./resources/js/components/Top/SNS.vue");
 /* harmony import */ var _components_Top_Access_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Top/Access.vue */ "./resources/js/components/Top/Access.vue");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/dist/js.cookie.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -616,17 +628,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    myid: String
+    myid: String,
+    details: String
   },
   methods: {
     clickJumpMainPage: function clickJumpMainPage() {
       window.location.href = "/";
+    }
+  },
+  mounted: function mounted() {
+    var cookie = document.cookie;
+    var array = cookie.split(';');
+    var isAccessFlg = array[0].split('=');
+
+    if (isAccessFlg) {
+      var access_height = document.querySelector('#js-click_scroll_access').clientHeight;
+      console.log(access_height);
+      window.scroll({
+        top: access_height
+      });
+      document.cookie = "isSwanstyleAccessFlg=true;max-age=0";
     }
   },
   components: {
@@ -636,6 +666,159 @@ __webpack_require__.r(__webpack_exports__);
     Access: _components_Top_Access_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/js-cookie/dist/js.cookie.js":
+/*!**************************************************!*\
+  !*** ./node_modules/js-cookie/dist/js.cookie.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*! js-cookie v3.0.1 | MIT */
+;
+(function (global, factory) {
+   true ? module.exports = factory() :
+  undefined;
+}(this, (function () { 'use strict';
+
+  /* eslint-disable no-var */
+  function assign (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        target[key] = source[key];
+      }
+    }
+    return target
+  }
+  /* eslint-enable no-var */
+
+  /* eslint-disable no-var */
+  var defaultConverter = {
+    read: function (value) {
+      if (value[0] === '"') {
+        value = value.slice(1, -1);
+      }
+      return value.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
+    },
+    write: function (value) {
+      return encodeURIComponent(value).replace(
+        /%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,
+        decodeURIComponent
+      )
+    }
+  };
+  /* eslint-enable no-var */
+
+  /* eslint-disable no-var */
+
+  function init (converter, defaultAttributes) {
+    function set (key, value, attributes) {
+      if (typeof document === 'undefined') {
+        return
+      }
+
+      attributes = assign({}, defaultAttributes, attributes);
+
+      if (typeof attributes.expires === 'number') {
+        attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
+      }
+      if (attributes.expires) {
+        attributes.expires = attributes.expires.toUTCString();
+      }
+
+      key = encodeURIComponent(key)
+        .replace(/%(2[346B]|5E|60|7C)/g, decodeURIComponent)
+        .replace(/[()]/g, escape);
+
+      var stringifiedAttributes = '';
+      for (var attributeName in attributes) {
+        if (!attributes[attributeName]) {
+          continue
+        }
+
+        stringifiedAttributes += '; ' + attributeName;
+
+        if (attributes[attributeName] === true) {
+          continue
+        }
+
+        // Considers RFC 6265 section 5.2:
+        // ...
+        // 3.  If the remaining unparsed-attributes contains a %x3B (";")
+        //     character:
+        // Consume the characters of the unparsed-attributes up to,
+        // not including, the first %x3B (";") character.
+        // ...
+        stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
+      }
+
+      return (document.cookie =
+        key + '=' + converter.write(value, key) + stringifiedAttributes)
+    }
+
+    function get (key) {
+      if (typeof document === 'undefined' || (arguments.length && !key)) {
+        return
+      }
+
+      // To prevent the for loop in the first place assign an empty array
+      // in case there are no cookies at all.
+      var cookies = document.cookie ? document.cookie.split('; ') : [];
+      var jar = {};
+      for (var i = 0; i < cookies.length; i++) {
+        var parts = cookies[i].split('=');
+        var value = parts.slice(1).join('=');
+
+        try {
+          var foundKey = decodeURIComponent(parts[0]);
+          jar[foundKey] = converter.read(value, foundKey);
+
+          if (key === foundKey) {
+            break
+          }
+        } catch (e) {}
+      }
+
+      return key ? jar[key] : jar
+    }
+
+    return Object.create(
+      {
+        set: set,
+        get: get,
+        remove: function (key, attributes) {
+          set(
+            key,
+            '',
+            assign({}, attributes, {
+              expires: -1
+            })
+          );
+        },
+        withAttributes: function (attributes) {
+          return init(this.converter, assign({}, this.attributes, attributes))
+        },
+        withConverter: function (converter) {
+          return init(assign({}, this.converter, converter), this.attributes)
+        }
+      },
+      {
+        attributes: { value: Object.freeze(defaultAttributes) },
+        converter: { value: Object.freeze(converter) }
+      }
+    )
+  }
+
+  var api = init(defaultConverter, { path: '/' });
+  /* eslint-enable no-var */
+
+  return api;
+
+})));
+
 
 /***/ }),
 
@@ -1122,10 +1305,10 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("article", [
-    _c("div", [_vm._t("heading")], 2),
+  return _c("article", { staticClass: "c-card__content u-mb-50" }, [
+    _c("div", { staticClass: "c-card__halfBox" }, [_vm._t("heading")], 2),
     _vm._v(" "),
-    _c("div", [_vm._t("description")], 2),
+    _c("div", { staticClass: "c-card__halfBox" }, [_vm._t("description")], 2),
   ])
 }
 var staticRenderFns = []
@@ -1198,9 +1381,9 @@ var render = function () {
           "ul",
           { staticClass: "u-display__flex u-mr-30" },
           [
-            _c("List", { attrs: { title: "Menu", url: "/menu" } }),
+            _c("List", { attrs: { title: "Menu", url: "menu" } }),
             _vm._v(" "),
-            _c("List", { attrs: { title: "Access", url: "/access" } }),
+            _c("List", { attrs: { title: "Access", url: "access" } }),
             _vm._v(" "),
             _c("List", { attrs: { title: "Contact", url: "/contact" } }),
             _vm._v(" "),
@@ -1297,36 +1480,44 @@ var render = function () {
     _c(
       "article",
       { staticClass: "p-top__access" },
-      [
-        _c(
-          "Detail",
-          {
-            scopedSlots: _vm._u([
+      _vm._l(_vm.changeDetailsJson, function (detail, index) {
+        return _c("Detail", {
+          key: index,
+          scopedSlots: _vm._u(
+            [
               {
                 key: "heading",
                 fn: function () {
                   return [
                     _c("p", { staticClass: "c-text__sentence" }, [
-                      _vm._v("住所"),
+                      _vm._v(_vm._s(detail.heading)),
                     ]),
                   ]
                 },
                 proxy: true,
               },
-            ]),
-          },
-          [_vm._v(" "), void 0],
-          2
-        ),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _vm._m(2),
-        _vm._v(" "),
-        _vm._m(3),
-      ],
+              {
+                key: "description",
+                fn: function () {
+                  return _vm._l(
+                    _vm.splitDescript(detail.description),
+                    function (text, index) {
+                      return _c(
+                        "p",
+                        { key: index, staticClass: "c-text__sentence" },
+                        [_vm._v(_vm._s(text))]
+                      )
+                    }
+                  )
+                },
+                proxy: true,
+              },
+            ],
+            null,
+            true
+          ),
+        })
+      }),
       1
     ),
     _vm._v(" "),
@@ -1338,48 +1529,7 @@ var render = function () {
     }),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("p", { staticClass: "c-text__sentence" }, [_vm._v("〒507-0071")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "c-text__sentence" }, [
-        _vm._v(
-          "\n        岐阜県多治見市旭ケ丘10丁目6-15（美濃焼卸団地内）\n      "
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sententce" }, [
-      _c("p", { staticClass: "c-text__main" }, [_vm._v("TEL 0572-26-9516")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sentence" }, [
-      _c("p", { staticClass: "c-text__main" }, [
-        _vm._v("営業時間 10:00 ~ 18:00"),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sentence" }, [
-      _c("p", { staticClass: "c-text__main" }, [_vm._v("定休日 土日祝日")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -1443,13 +1593,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "c-card__content u-bg__white" }, [
+    return _c("article", {}, [
       _c("img", {
         staticClass: "p-image__menu",
         attrs: { src: "/img/esthetic_2.jpg" },
       }),
       _vm._v(" "),
-      _c("article", { staticClass: "c-card__introduct" }, [_c("p")]),
+      _c("article", {}, [_c("p")]),
     ])
   },
 ]
@@ -1600,7 +1750,25 @@ var render = function () {
   return _c(
     "div",
     { staticClass: "l-container" },
-    [_c("Space"), _vm._v(" "), _vm._m(0)],
+    [
+      _c("Space"),
+      _vm._v(" "),
+      _c("article", { staticClass: "p-gird__main" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "article",
+          _vm._l(_vm.changeJson, function (detail, index) {
+            return _c("div", { key: index }, [
+              _vm._v(
+                "\n               " + _vm._s(detail.heading) + "\n           "
+              ),
+            ])
+          }),
+          0
+        ),
+      ]),
+    ],
     1
   )
 }
@@ -1609,12 +1777,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "p-gird__main" }, [
-      _c("div", { staticClass: "u-align__center" }, [
-        _c("h1", { staticClass: "c-text__title" }, [_vm._v("ACCESS")]),
-      ]),
-      _vm._v(" "),
-      _c("article", [_c("div")]),
+    return _c("div", { staticClass: "u-align__center" }, [
+      _c("h1", { staticClass: "c-text__title" }, [_vm._v("ACCESS")]),
     ])
   },
 ]
@@ -1721,7 +1885,19 @@ var render = function () {
       _vm._v(" "),
       _c("Content", { attrs: { title: "MENU" } }, [_c("Menu")], 1),
       _vm._v(" "),
-      _c("Content", { attrs: { title: "ACCESS" } }, [_c("Access")], 1),
+      _c(
+        "div",
+        { attrs: { id: "js-click_scroll_access" } },
+        [
+          _c(
+            "Content",
+            { attrs: { title: "ACCESS" } },
+            [_c("Access", { attrs: { details: _vm.details } })],
+            1
+          ),
+        ],
+        1
+      ),
       _vm._v(" "),
       _c(
         "Content",

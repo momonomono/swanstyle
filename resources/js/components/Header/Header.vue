@@ -4,8 +4,8 @@
 
         <nav class="c-nav__header">
             <ul class="u-display__flex u-mr-30">
-                <List title="Menu" url="/menu" />
-                <List title="Access" url="/access" />
+                <List title="Menu" url="menu" />
+                <List title="Access" url="access" />
                 <List title="Contact" url="/contact" />
                 <List title="News" url="/news" />
             </ul>
