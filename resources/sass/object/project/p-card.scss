@@ -22,4 +22,16 @@
         background:$color-bg__footer;
         color:$color-bg__footer;
     }
+
+    &__input{
+        width:100%;
+        display: block;
+    }
+
+    &__menu{
+        width:100%;
+        background:$color-bg__primary;
+        padding:20px 10px;
+
+    }
 }

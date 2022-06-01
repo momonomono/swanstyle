@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="l-main">
         <img class="p-image__top" src="/img/room_1.jpg">
 
         <Content title="MENU">
@@ -7,10 +7,11 @@
         </Content>
 
         <div id="js-click_scroll_access">
+        </div>
             <Content title="ACCESS" >
                 <Access :details="details"/>
             </Content>
-        </div>
+
 
         <Content title="SNS">
             <Sns :myid="myid"/>
@@ -23,7 +24,6 @@
     import Menu from "../components/Top/Menu.vue";
     import Sns from "../components/Top/SNS.vue";
     import Access from "../components/Top/Access.vue";
-    import Cookie from "js-cookie";
 
     export default{
         props :{
@@ -36,18 +36,11 @@
             }
         },
         mounted(){
-            const cookie = document.cookie;
-            const array = cookie.split(';');
-            const isAccessFlg = array[0].split('=');
-
+            const isAccessFlg = this.$cookie.get('isAccessFlg');
+            
             if(isAccessFlg){
-                const access_height = document.querySelector('#js-click_scroll_access').clientHeight;
-                console.log(access_height);
-                window.scroll({
-                    top : access_height,
-                })
-                
-                document.cookie = "isSwanstyleAccessFlg=true;max-age=0";
+                window.scroll(0,759);
+                this.$cookie.delete('isAccessFlg');
             }
         },
         components :{

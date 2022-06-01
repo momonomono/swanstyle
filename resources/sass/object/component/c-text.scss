@@ -10,4 +10,16 @@
         font-size:18px;
         line-height:30px;
     }
+
+    &__label{
+        font-size:$size_ft__lg;
+        line-height:$size_ft__lg;
+        color:$color-font__primary;
+    }
+
+    &__err{
+        font-size:$size_ft__md;
+        line-height:$size_ft__lg;
+        color:$color-font__errMsg;
+    }
 }

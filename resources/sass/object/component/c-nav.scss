@@ -4,5 +4,17 @@
         position: absolute;
         right: 30px;
         display: flex;
+
+        @include mq(sp){
+            display:block;
+        }
+
+        &_container{
+            display:flex;
+
+            @include mq(sp){
+                display:block;
+            }
+        }
     }
 }

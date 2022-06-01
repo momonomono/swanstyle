@@ -479,17 +479,36 @@ th {
   height: 100px;
 }
 
-.l-main {
-  min-height: 100vh;
+.l-content {
+  padding: 100px 0;
 }
 
-.l-content {
-  padding-bottom: 300px;
+.l-main {
+  width: 100%;
+}
+
+.l-form {
+  width: 50%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .l-container {
   width: 80%;
   margin: 0 auto;
+}
+
+.c-button__form {
+  padding: 0 20px;
+  box-sizing: border-box;
+  width: 150px;
+  height: 50px;
+  background: #008db1;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 
 .c-card__cover {
@@ -531,10 +550,40 @@ th {
   height: auto;
 }
 
+.c-input__bottom {
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #008db1;
+  outline: none;
+  transition: all 0.5s;
+}
+
+.c-input__bottom:focus {
+  border-bottom: 3px solid #008db1;
+}
+
 .c-nav__header {
   position: absolute;
   right: 30px;
   display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .c-nav__header {
+    display: block;
+  }
+}
+
+.c-nav__header_container {
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .c-nav__header_container {
+    display: block;
+  }
 }
 
 .c-text__title {
@@ -546,6 +595,18 @@ th {
   font-weight: 500;
   font-size: 18px;
   line-height: 30px;
+}
+
+.c-text__label {
+  font-size: 1.25em;
+  line-height: 1.25em;
+  color: #008db1;
+}
+
+.c-text__err {
+  font-size: 1em;
+  line-height: 1.25em;
+  color: #fd1515;
 }
 
 .p-card__content {
@@ -567,6 +628,17 @@ th {
   height: 30px;
   background: #000000;
   color: #000000;
+}
+
+.p-card__input {
+  width: 100%;
+  display: block;
+}
+
+.p-card__menu {
+  width: 100%;
+  background: #008db1;
+  padding: 20px 10px;
 }
 
 .p-gird__main {

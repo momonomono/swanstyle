@@ -15,7 +15,7 @@
 
                 if(url == "access"){
 
-                    document.cookie = "isSwanstyleAccessFlg=true";
+                    this.$cookie.set('isAccessFlg',true,1);
                     window.location.href="/";
                     
                 }else{
