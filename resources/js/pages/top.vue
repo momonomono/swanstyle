@@ -1,21 +1,6 @@
 <template>
     <div class="l-main">
-        <img class="p-image__top" src="/img/room_1.jpg">
-
-        <Content title="MENU">
-            <Menu />
-        </Content>
-
-        <div id="js-click_scroll_access">
-        </div>
-            <Content title="ACCESS" >
-                <Access :details="details"/>
-            </Content>
-
-
-        <Content title="SNS">
-            <Sns :myid="myid"/>
-        </Content>
+       
     </div>
 </template>
 

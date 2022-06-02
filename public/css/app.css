@@ -476,7 +476,11 @@ th {
 
 .l-header {
   width: 100%;
-  height: 100px;
+}
+
+.l-header__container {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .l-content {
@@ -538,6 +542,29 @@ th {
   justify-content: space-between;
 }
 
+.c-gird__center {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .c-gird__center {
+    justify-content: center;
+  }
+}
+
+.c-gird__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .c-gird__header {
+    display: block;
+  }
+}
+
 .c-image__logo {
   width: 250px;
   position: relative;
@@ -565,25 +592,9 @@ th {
 }
 
 .c-nav__header {
-  position: absolute;
-  right: 30px;
   display: flex;
-}
-
-@media screen and (max-width: 767px) {
-  .c-nav__header {
-    display: block;
-  }
-}
-
-.c-nav__header_container {
-  display: flex;
-}
-
-@media screen and (max-width: 767px) {
-  .c-nav__header_container {
-    display: block;
-  }
+  justify-content: space-between;
+  width: 100%;
 }
 
 .c-text__title {
@@ -646,11 +657,18 @@ th {
 }
 
 .p-gird__header {
-  display: flex;
-  align-items: center;
-  transition: all 0.5s;
-  z-index: 2;
-  position: fixed;
+  min-height: 100px;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .p-gird__header {
+    padding: 30px 0;
+  }
+}
+
+.p-gird__nav {
+  position: relative;
 }
 
 .p-image__top {
@@ -684,7 +702,6 @@ th {
 .p-logo__main {
   width: 250px;
   position: relative;
-  left: 30px;
   cursor: pointer;
   cursor: hand;
 }
@@ -702,6 +719,12 @@ th {
   text-align: center;
   position: relative;
   transition: all 0.2s;
+}
+
+@media screen and (max-width: 767px) {
+  .p-text__header {
+    padding: 20px 10px;
+  }
 }
 
 .p-text__header::after {
@@ -1176,6 +1199,14 @@ th {
 
 .u-align__center {
   text-align: center;
+}
+
+.u-bg__red {
+  background: red;
+}
+
+.u-bg__blue {
+  background: blue;
 }
 
 .js-header__getColor {

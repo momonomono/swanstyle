@@ -1,56 +1,74 @@
 <template>
-    <div class="l-header p-gird__header" :class="headerObject">
-        <img @click="clickJumpMainPage" class="p-logo__main" src="img/swanstyle.png">
+    <div :class="headerObject">
+     <div class="l-header">
 
-        <nav class="c-nav__header">
-            <ul class="c-nav__header_container u-mr-30">
-                <List title="Menu" url="menu" />
-                <List title="Access" url="access" />
-                <List title="Contact" url="/contact" />
-                <List title="News" url="/news" />
+      <!-- ヘッダーの幅 -->
+      <div class="l-header__container">
+        
+        <!-- ヘッダーの配置調整 -->
+        <div class="c-gird__header p-gird__header">
+          
+          <!-- ヘッダーロゴ  -->
+          <div class="c-gird__center">
+            <img @click="clickJumpMainPage" class="p-logo__main" src="img/swanstyle.png" />
+          </div>
+
+
+          <!-- ヘッダーナビゲーション -->
+          <nav class="c-gird__center">
+            <ul class="c-nav__header">
+              <List title="Menu" url="menu" />
+              <List title="Access" url="access" />
+              <List title="Contact" url="/contact" />
+              <List title="News" url="/news" />
             </ul>
-        </nav>
+          </nav>
+
+        </div>
+
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-    import List from "./ListForHeader.vue";
-    export default{
-        data : function(){
-            return{
-                scrollY : 0,
-                headerFlg : false,
-                pagePath : window.location.pathname
-            }
-        },
-        mounted(){
-            window.addEventListener('scroll',this.changeHeaderBackground);
-        },
-        computed :{
-            headerObject(){
-                return {
-                    'js-header__getColor' : this.checkGetColor,
-                }
-            },
-            checkPathName(){
-                return this.pagePath !== "/"
-            },
-            checkGetColor(){
-                return this.headerFlg || this.checkPathName;
-            }
-        },
-        methods :{
-            changeHeaderBackground(){
-                this.scrollY = window.scrollY;
-                
-                this.headerFlg = this.scrollY > 120 ? true : false ;
-            },
-            clickJumpMainPage(){
-                window.location.href = "/";
-            }
-        },
-        components :{
-            List
-        }
+import List from "./ListForHeader.vue";
+export default {
+  data: function() {
+    return {
+      scrollY: 0,
+      headerFlg: false,
+      pagePath: window.location.pathname
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.changeHeaderBackground);
+  },
+  computed: {
+    headerObject() {
+      return {
+        "js-header__getColor": this.checkGetColor
+      };
+    },
+    checkPathName() {
+      return this.pagePath !== "/";
+    },
+    checkGetColor() {
+      return this.headerFlg || this.checkPathName;
     }
+  },
+  methods: {
+    changeHeaderBackground() {
+      this.scrollY = window.scrollY;
+
+      this.headerFlg = this.scrollY > 120 ? true : false;
+    },
+    clickJumpMainPage() {
+      window.location.href = "/";
+    }
+  },
+  components: {
+    List
+  }
+};
 </script>

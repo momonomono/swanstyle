@@ -1,20 +1,8 @@
 .c-nav {
 
-    &__header {
-        position: absolute;
-        right: 30px;
+    &__header{
         display: flex;
-
-        @include mq(sp){
-            display:block;
-        }
-
-        &_container{
-            display:flex;
-
-            @include mq(sp){
-                display:block;
-            }
-        }
+        justify-content: space-between;
+        width:100%;
     }
 }

@@ -11,11 +11,6 @@
     <div id="app">
         <header-component></header-component>
 
-        <div class="l-global u-bg__main">
-            @yield('body')
-        </div>
-
-        <footer-component></footer-component>
     </div>
 </body>
 <script src="{{ asset('js/app.js') }}"></script>

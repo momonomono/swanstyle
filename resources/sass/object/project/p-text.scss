@@ -7,6 +7,10 @@
         position: relative;
         transition: all 0.2s;
 
+        @include mq(sp){
+            padding: 20px 10px;
+        }
+
         &::after {
             content: "";
             width: 50%;

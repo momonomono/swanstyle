@@ -210,6 +210,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -220,12 +238,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    window.addEventListener('scroll', this.changeHeaderBackground);
+    window.addEventListener("scroll", this.changeHeaderBackground);
   },
   computed: {
     headerObject: function headerObject() {
       return {
-        'js-header__getColor': this.checkGetColor
+        "js-header__getColor": this.checkGetColor
       };
     },
     checkPathName: function checkPathName() {
@@ -759,21 +777,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Top_Menu_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Top/Menu.vue */ "./resources/js/components/Top/Menu.vue");
 /* harmony import */ var _components_Top_SNS_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Top/SNS.vue */ "./resources/js/components/Top/SNS.vue");
 /* harmony import */ var _components_Top_Access_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Top/Access.vue */ "./resources/js/components/Top/Access.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1607,34 +1610,38 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "l-header p-gird__header", class: _vm.headerObject },
-    [
-      _c("img", {
-        staticClass: "p-logo__main",
-        attrs: { src: "img/swanstyle.png" },
-        on: { click: _vm.clickJumpMainPage },
-      }),
-      _vm._v(" "),
-      _c("nav", { staticClass: "c-nav__header" }, [
-        _c(
-          "ul",
-          { staticClass: "c-nav__header_container u-mr-30" },
-          [
-            _c("List", { attrs: { title: "Menu", url: "menu" } }),
-            _vm._v(" "),
-            _c("List", { attrs: { title: "Access", url: "access" } }),
-            _vm._v(" "),
-            _c("List", { attrs: { title: "Contact", url: "/contact" } }),
-            _vm._v(" "),
-            _c("List", { attrs: { title: "News", url: "/news" } }),
-          ],
-          1
-        ),
+  return _c("div", { class: _vm.headerObject }, [
+    _c("div", { staticClass: "l-header" }, [
+      _c("div", { staticClass: "l-header__container" }, [
+        _c("div", { staticClass: "c-gird__header p-gird__header" }, [
+          _c("div", { staticClass: "c-gird__center" }, [
+            _c("img", {
+              staticClass: "p-logo__main",
+              attrs: { src: "img/swanstyle.png" },
+              on: { click: _vm.clickJumpMainPage },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("nav", { staticClass: "c-gird__center" }, [
+            _c(
+              "ul",
+              { staticClass: "c-nav__header" },
+              [
+                _c("List", { attrs: { title: "Menu", url: "menu" } }),
+                _vm._v(" "),
+                _c("List", { attrs: { title: "Access", url: "access" } }),
+                _vm._v(" "),
+                _c("List", { attrs: { title: "Contact", url: "/contact" } }),
+                _vm._v(" "),
+                _c("List", { attrs: { title: "News", url: "/news" } }),
+              ],
+              1
+            ),
+          ]),
+        ]),
       ]),
-    ]
-  )
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2161,35 +2168,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "l-main" },
-    [
-      _c("img", {
-        staticClass: "p-image__top",
-        attrs: { src: "/img/room_1.jpg" },
-      }),
-      _vm._v(" "),
-      _c("Content", { attrs: { title: "MENU" } }, [_c("Menu")], 1),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "js-click_scroll_access" } }),
-      _vm._v(" "),
-      _c(
-        "Content",
-        { attrs: { title: "ACCESS" } },
-        [_c("Access", { attrs: { details: _vm.details } })],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "Content",
-        { attrs: { title: "SNS" } },
-        [_c("Sns", { attrs: { myid: _vm.myid } })],
-        1
-      ),
-    ],
-    1
-  )
+  return _c("div", { staticClass: "l-main" })
 }
 var staticRenderFns = []
 render._withStripped = true
