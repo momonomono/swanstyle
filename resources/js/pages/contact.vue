@@ -1,6 +1,5 @@
 <template>
-    <div class="u-pt-100 u-pb-100">
-        <Space />
+    <div class="c-gird__main">
 
         <div class="u-pb-100 l-form">
             <Title title="CONTACT" />
@@ -27,7 +26,6 @@
 </template>
 
 <script>
-    import Space from "../components/Header/HeaderSpace.vue";
     import Title from "../components/Title.vue";
     import Input from "../components/Contact/Input.vue";
 
@@ -73,7 +71,6 @@
             },
         },
         components:{
-            Space,
             Title,
             Input
         }

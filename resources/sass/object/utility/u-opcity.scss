@@ -1,0 +1,6 @@
+@for $i from 1 through 10 {
+    
+    .u-op__#{$i}{
+        opacity: calc($i/10);
+    }
+}

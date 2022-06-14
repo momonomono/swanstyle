@@ -1,16 +1,19 @@
 <template>
-    <div :class="headerObject">
-     <div class="l-header">
+    <div class="l-header p-gird__header">
+      <div class="u-bg__header ">
 
       <!-- ヘッダーの幅 -->
       <div class="l-header__container">
         
         <!-- ヘッダーの配置調整 -->
-        <div class="c-gird__header p-gird__header">
+        <div class="c-gird__header p-gird__header_container">
           
           <!-- ヘッダーロゴ  -->
           <div class="c-gird__center">
-            <img @click="clickJumpMainPage" class="p-logo__main" src="img/swanstyle.png" />
+            <img 
+              @click="clickJumpMainPage" 
+              class="p-logo__main" src="img/logo/title_black.png" 
+            />
           </div>
 
 
@@ -50,19 +53,8 @@ export default {
         "js-header__getColor": this.checkGetColor
       };
     },
-    checkPathName() {
-      return this.pagePath !== "/";
-    },
-    checkGetColor() {
-      return this.headerFlg || this.checkPathName;
-    }
   },
   methods: {
-    changeHeaderBackground() {
-      this.scrollY = window.scrollY;
-
-      this.headerFlg = this.scrollY > 120 ? true : false;
-    },
     clickJumpMainPage() {
       window.location.href = "/";
     }

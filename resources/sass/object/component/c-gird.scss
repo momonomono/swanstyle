@@ -14,10 +14,47 @@
         }
     }
 
+    &__column{
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+    }
+
+    &__content{
+        width:100%;
+        padding-bottom:300px;
+        position:relative;
+        z-index:1;
+
+        @include mq(sp){
+            padding-bottom:150px;
+        }
+    }
+
+    &__between{
+        display: flex;
+        justify-content: space-between;
+
+    }
+
     &__header{
         display:flex;
         align-items:center;
         justify-content: space-between;
+        
+        @include mq(sp){
+            display: block;
+        }
+    }
+
+    &__main{
+        padding-top:100px;
+        padding-bottom:100px;
+    }
+
+    &__spIcon{
+        display: none;
 
         @include mq(sp){
             display: block;

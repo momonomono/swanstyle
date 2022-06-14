@@ -12,4 +12,26 @@
         margin:0 auto;
         border-radius: 8px;
     }
+
+    &__main{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        border:3px solid $color-border__button;
+        padding:10px 20px;
+        height:50px;
+        
+        position:relative;
+    
+        &::after{
+            content:"";
+            width:10px;
+            height:10px;
+            border-top:2px solid $color-border__button;
+            border-right:2px solid $color-border__button;
+            transform: rotate(45deg);
+            margin-left:10px;
+        }
+    }
 }

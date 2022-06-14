@@ -2,13 +2,19 @@
 
     &__content{
         padding-bottom:300px;
+
+        @include mq(sp){
+            padding-bottom:150px;
+        }
     }
 
     &__title{
-        &--top{
-            display: flex;
-            justify-content: center;
-            margin-bottom:100px;
+        display: flex;
+        justify-content: center;
+        margin-bottom:100px;
+
+        @include mq(sp){
+            margin-bottom:30px;
         }
     }
 

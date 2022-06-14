@@ -1,6 +1,6 @@
 <template>
 
-    <article class="c-card__content u-mb-50">
+    <article class="c-card__content">
         <div class="c-card__halfBox">
             <slot name="heading"></slot>
         </div>

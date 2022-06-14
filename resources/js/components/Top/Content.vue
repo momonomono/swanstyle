@@ -1,6 +1,6 @@
 <template>
   <div class="l-container">
-    <div class="p-card__content">
+    <div>
       <Title :title="title"/>
 
       <slot></slot>

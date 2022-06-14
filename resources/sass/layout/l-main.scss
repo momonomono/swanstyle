@@ -11,10 +11,25 @@
     width:50%;
     max-width:500px;
     margin:0 auto;
+
+    @include mq(sp){
+        width:90%;
+    }
 }
 
 .l-container{
     width:80%;
     margin:0 auto;
-}
 
+    @include mq(sp){
+        width:90%;
+    }
+}
+.l-slider{
+    width:50%;
+    margin:0 auto;
+
+    @include mq(sp){
+        width:90%;
+    }
+}

@@ -39,6 +39,17 @@
         line-height:100px;
     }
 
+    &__menu{
+
+        &--title{
+            font-size:$size_ft__2x;
+        }
+
+        &--content{
+            font-size:$size_ft__md;
+        }
+    }
+
     &__footer{
         color:#ffffff;
         text-align: center;

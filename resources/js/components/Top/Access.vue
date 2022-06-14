@@ -1,6 +1,6 @@
 <template>
-  <article class="p-card__access">
-    <article class="p-top__access">
+  <article class="c-gird__content">
+    <article class="p-top__detail">
 
 
       <Detail v-for="(detail,index) in changeDetailsJson" :key="index">

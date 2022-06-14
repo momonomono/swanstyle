@@ -11,7 +11,6 @@ Vue.component('top-component',require('./pages/top.vue').default);
 Vue.component('contact-component',require('./pages/contact.vue').default);
 Vue.component('news-component',require('./pages/news.vue').default);
 
-
 const app = new Vue({
     el:"#app",
 })
