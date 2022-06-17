@@ -38,7 +38,7 @@ class Instagram extends Command
      */
     public function handle()
     {
-        $baseUrl = "https://graph.instagram.com/refresh_access_token?";
+        $baseUrl = "";
 
         // アクセストークン取得
         $instagramToken = InstagramToken::select('access_token')->latest()->first();

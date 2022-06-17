@@ -7,10 +7,10 @@
     }
 
     &__space{
-        height:100px;
+        height:$h_header;
 
         @include mq(sp){
-            height:145px;
+            height:$h_header__sp;
         }
     }
 }

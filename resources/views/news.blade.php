@@ -4,5 +4,5 @@
 
 @section('body')
         
-        
+        <news-component></news-component>
 @endsection

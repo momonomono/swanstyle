@@ -1,3 +1,5 @@
+
+
 .p-gird {
     &__main {
         padding-top: 100px;
@@ -9,12 +11,12 @@
         z-index:10;
 
         &_container {
-            min-height: 100px;
+            height: $h_header;
             width: 100%;
 
             @include mq(sp) {
                 padding: 20px 0;
-                min-height:145px;
+                height:$h_header__sp;
             }
         }
     }
@@ -40,6 +42,44 @@
         &--right{
             @extend .p-gird__sliderIcon;
             right: 0;
+        }
+    }
+
+    &__top{
+        width:100%;
+        height:calc(100vh - $h_header);
+        display:flex;
+        margin-bottom:300px;
+
+        @include mq(sp){
+            height:calc(100vh - 150px);
+            display:block;
+            margin-bottom:150px;
+        }
+    }
+
+    &__topLogo{
+        width:20%;
+        min-width:200px;
+        background-color: $color-bg__primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include mq(sp){
+            width:100%;
+            height:$h_topLogo__sp;
+        }
+
+    }
+
+    &__topImage{
+        width:80%;
+
+        @include mq(sp){
+            width:100%;
+            height:calc(100% - $h_topLogo__sp);
         }
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Detail;
+use App\Menu;
 use App\Http\Requests\FormPostRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -18,12 +19,24 @@ class MainController extends Controller
             'details' => Detail::get()
         ];
 
+        
+        
+
+        
+
+        
+        
+
         return view("top",$details);
     }
 
     public function menu(){
 
-        return view('menu');
+        $menus = [
+            'menus' => Menu::get()
+        ];
+
+        return view('menu',$menus);
     }
 
     public function contact(){

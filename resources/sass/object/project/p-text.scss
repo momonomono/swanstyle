@@ -42,11 +42,40 @@
     &__menu{
 
         &--title{
-            font-size:$size_ft__2x;
+            font-size:$size_ft__xl;
+            border-bottom:3px solid $color-border__primary;
+
+            @include mq(sp){
+                font-size:$size_ft__lg;
+            }
         }
 
         &--content{
             font-size:$size_ft__md;
+            line-height:$size_ft__2x;
+
+            @include mq(sp){
+                font-size:$size_ft__sm;
+            }
+        }
+
+        &--time{
+            font-size:$size_ft__sm;
+
+            @include mq(sp){
+                margin-top:10px;
+            }
+        }
+
+        &--price{
+            font-size:$size_ft__md;
+            width:50%;
+            font-weight: 900;
+
+            @include mq(sp){
+                width:100%;
+                margin-top:10px;
+            }
         }
     }
 

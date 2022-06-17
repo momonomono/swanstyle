@@ -1,7 +1,7 @@
 <template>
     <div class="c-gird__main">
 
-        <div class="u-pb-100 l-form">
+        <div class="u-pb-100 l-content">
             <Title title="CONTACT" />
 
             <form method="post">

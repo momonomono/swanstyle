@@ -324,12 +324,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     menu: {
-      type: Object,
       required: true
     }
+  },
+  computed: {
+    checkSpace: function checkSpace() {
+      var splitContent = this.menu.content.split(' ');
+      return splitContent;
+    },
+    checkFirstPrice: function checkFirstPrice() {
+      if (this.menu.first_price == 0) {
+        return false;
+      }
+
+      return true;
+    }
+  },
+  methods: {
+    addCommaToPrice: function addCommaToPrice(price) {
+      return price.toLocaleString();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/News/NewItem.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/News/NewItem.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    title: {}
   }
 });
 
@@ -473,7 +514,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -750,20 +790,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      menus: [{
-        title: "毛穴洗浄＋小顔フェイシャルMFIP",
-        time: 90,
-        content: "素水で頑固な汚れを吸収&洗浄し取り除くトリートメントと小顔フェイシャルのセットです.毛穴洗浄後にMFIP",
-        list_price: 19800,
-        first_price: 14800,
-        pre_price: 12000
-      }]
-    };
+  props: {
+    menus: {
+      required: true
+    }
   },
   components: {
     Detail: _components_Menu_MenuDetail_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -782,13 +817,27 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Title_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Title.vue */ "./resources/js/components/Title.vue");
+/* harmony import */ var _components_News_NewItem_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/News/NewItem.vue */ "./resources/js/components/News/NewItem.vue");
 //
 //
 //
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Title: _components_Title_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    NewsItem: _components_News_NewItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
+});
 
 /***/ }),
 
@@ -830,11 +879,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      isShowImageForSP: true,
+      innerWidth: window.innerWidth
+    };
+  },
   props: {
     myid: String,
     details: String
@@ -854,7 +914,7 @@ __webpack_require__.r(__webpack_exports__);
         console.log('success');
         var access = document.querySelector('.js-click_scroll_access');
         var access_height = access.getBoundingClientRect().top;
-        var scroll_height = access_cookie - 100;
+        var scroll_height = access_height - 200;
         console.log(scroll_height);
         window.scroll(0, scroll_height);
       }
@@ -2936,29 +2996,72 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("article", [
-    _c("div", [
+  return _c("article", { staticClass: "p-card__menu" }, [
+    _c("div", { staticClass: "p-card__menu--title u-mb-10" }, [
       _c("h2", { staticClass: "p-text__menu--title" }, [
         _vm._v(_vm._s(_vm.menu.title)),
       ]),
       _vm._v(" "),
-      _c("p"),
-    ]),
-    _vm._v(" "),
-    _c("div", {}, [
-      _c("p", { staticClass: "p-text__menu--content" }, [
-        _vm._v(_vm._s(_vm.menu.content)),
+      _c("p", { staticClass: "p-text__menu--time" }, [
+        _vm._v("施術時間 : " + _vm._s(_vm.menu.time) + "分"),
       ]),
     ]),
     _vm._v(" "),
-    _c("div", [
-      _c("p", [_vm._v(_vm._s(_vm.menu.list_price))]),
+    _c(
+      "div",
+      { staticClass: "u-mt-20 u-mb-20" },
+      _vm._l(_vm.checkSpace, function (text, index) {
+        return _c("p", { key: index, staticClass: "p-text__menu--content" }, [
+          _vm._v("\n            " + _vm._s(text) + "\n        "),
+        ])
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "p-card__menu--price" }, [
+      _c("p", { staticClass: "p-text__menu--price" }, [
+        _vm._v(
+          "定価価格 : " +
+            _vm._s(_vm.addCommaToPrice(_vm.menu.list_price)) +
+            " 円"
+        ),
+      ]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.menu.first_price))]),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.menu.pre_price))]),
+      _vm.checkFirstPrice
+        ? _c("p", { staticClass: "p-text__menu--price" }, [
+            _vm._v(
+              "初回価格 : " +
+                _vm._s(_vm.addCommaToPrice(_vm.menu.first_price)) +
+                " 円"
+            ),
+          ])
+        : _vm._e(),
     ]),
   ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/News/NewItem.vue?vue&type=template&id=4c1d85e2&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/News/NewItem.vue?vue&type=template&id=4c1d85e2& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section")
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3126,11 +3229,9 @@ var render = function () {
       _vm._v(" "),
       _c("article", { staticClass: "c-gird__column p-top__detail" }, [
         _c("p", { staticClass: "c-text__sentence" }, [
-          _vm._v("メニューがたくさんありますメニューがたくさんあります"),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "c-text__sentence" }, [
-          _vm._v("メニューがたくさんありますメニューがたくさんあります"),
+          _vm._v(
+            "お客様のお悩みを解決できるよう、様々なコースを用意しております"
+          ),
         ]),
         _vm._v(" "),
         _c(
@@ -3345,7 +3446,7 @@ var render = function () {
   return _c("div", { staticClass: "c-gird__main" }, [
     _c(
       "div",
-      { staticClass: "u-pb-100 l-form" },
+      { staticClass: "u-pb-100 l-content" },
       [
         _c("Title", { attrs: { title: "CONTACT" } }),
         _vm._v(" "),
@@ -3396,18 +3497,23 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "c-gird__main" }, [
+  return _c("div", { staticClass: "l-container" }, [
     _c(
       "div",
-      { staticClass: "u-pb-100 l-container" },
+      { staticClass: "c-gird__main u-pb-100" },
       [
         _c("Title", { attrs: { title: "Menu" } }),
         _vm._v(" "),
-        _vm._l(_vm.menus, function (menu, index) {
-          return _c("Detail", { key: index, attrs: { menu: menu } })
-        }),
+        _c(
+          "section",
+          { staticClass: "l-menu u-mt-50 u-mb-30" },
+          _vm._l(_vm.menus, function (menu, index) {
+            return _c("Detail", { key: index, attrs: { menu: menu } })
+          }),
+          1
+        ),
       ],
-      2
+      1
     ),
   ])
 }
@@ -3433,7 +3539,14 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", { staticClass: "l-main" }, [
+    _c(
+      "section",
+      { staticClass: "c-gird__main" },
+      [_c("Title", { attrs: { title: "NEWS" } }), _vm._v(" "), _c("NewItem")],
+      1
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3488,17 +3601,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "c-gird__content " }, [
-      _c("img", {
-        staticClass: "p-image__logo",
-        staticStyle: { color: "black" },
-        attrs: { src: "/img/logo/logo.png" },
-      }),
+    return _c("div", { staticClass: "p-gird__top" }, [
+      _c("div", { staticClass: "p-gird__topLogo" }, [
+        _c("img", {
+          staticClass: "p-image__logo",
+          attrs: { src: "/img/logo/logo.png" },
+        }),
+      ]),
       _vm._v(" "),
-      _c("img", {
-        staticClass: "p-image__top",
-        attrs: { src: "/img/room_1.jpg" },
-      }),
+      _c("div", { staticClass: "p-gird__topImage" }, [
+        _c("img", {
+          staticClass: "p-image__top",
+          attrs: { src: "/img/room_1.jpg" },
+        }),
+      ]),
     ])
   },
 ]
@@ -16123,6 +16239,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuDetail_vue_vue_type_template_id_a864ec76___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuDetail_vue_vue_type_template_id_a864ec76___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/News/NewItem.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/News/NewItem.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _NewItem_vue_vue_type_template_id_4c1d85e2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NewItem.vue?vue&type=template&id=4c1d85e2& */ "./resources/js/components/News/NewItem.vue?vue&type=template&id=4c1d85e2&");
+/* harmony import */ var _NewItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NewItem.vue?vue&type=script&lang=js& */ "./resources/js/components/News/NewItem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _NewItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _NewItem_vue_vue_type_template_id_4c1d85e2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _NewItem_vue_vue_type_template_id_4c1d85e2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/News/NewItem.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/News/NewItem.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/News/NewItem.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NewItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./NewItem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/News/NewItem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NewItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/News/NewItem.vue?vue&type=template&id=4c1d85e2&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/News/NewItem.vue?vue&type=template&id=4c1d85e2& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewItem_vue_vue_type_template_id_4c1d85e2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./NewItem.vue?vue&type=template&id=4c1d85e2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/News/NewItem.vue?vue&type=template&id=4c1d85e2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewItem_vue_vue_type_template_id_4c1d85e2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewItem_vue_vue_type_template_id_4c1d85e2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -8,6 +8,15 @@
         }
     }
 
+    &__topImg{
+        background:red;
+        width:60%;
+        height:50vh;
+        position:absolute;
+        top:0;
+        right:0;
+    }
+
     &__title{
         display: flex;
         justify-content: center;
@@ -36,8 +45,32 @@
 
     &__menu{
         width:100%;
-        background:$color-bg__primary;
-        padding:20px 10px;
+        border:2px solid $color-border__gray;
+        padding:30px;
+        box-sizing: border-box;
+        margin-bottom:30px;
 
+        @include mq(sp){
+            margin-bottom:100px;
+            padding:30px 12px;
+        }
+
+        &--title{
+            display: flex;
+            justify-content: space-between;
+
+            @include mq(sp){
+                display: inline;
+            }
+        }
+
+        &--price{
+            display: flex;
+            align-items: center;
+
+            @include mq(sp){
+                display:inline;
+            }
+        }
     }
 }

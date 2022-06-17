@@ -1,8 +1,13 @@
 <template>
     <div>
-        <div class="c-gird__content ">
-            <img class="p-image__logo" src="/img/logo/logo.png" style="color:black;">
-            <img class="p-image__top" src="/img/room_1.jpg">
+        <div class="p-gird__top">
+            <div class="p-gird__topLogo">
+                <img class="p-image__logo" src="/img/logo/logo.png">
+            </div>
+            
+            <div class="p-gird__topImage">
+                <img class="p-image__top" src="/img/room_1.jpg">
+            </div>
         </div>
 
         <Content title="MENU">
@@ -30,6 +35,12 @@
     import Access from "../components/Top/Access.vue";
 
     export default{
+        data :function (){
+            return {
+                isShowImageForSP : true,
+                innerWidth : window.innerWidth
+            }
+        },
         props :{
             myid : String,
             details : String
@@ -50,14 +61,14 @@
                     
                     const access = document.querySelector('.js-click_scroll_access');
                     const access_height = access.getBoundingClientRect().top;
-                    const scroll_height = access_cookie - 100;
+                    const scroll_height = access_height - 200;
                     console.log(scroll_height);
 
                     window.scroll(0,scroll_height);
                 }
                 
                 this.$cookie.delete('isAccessFlg');
-            }
+            },
         },
         components :{
             Content,

@@ -4,5 +4,5 @@
 
 @section('body')
         
-        <menu-component></menu-component>
+        <menu-component :menus="{{ json_encode($menus) }}"></menu-component>
 @endsection

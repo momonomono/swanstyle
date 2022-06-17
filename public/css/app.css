@@ -489,7 +489,7 @@ th {
 
 @media screen and (max-width: 767px) {
   .l-header__space {
-    height: 145px;
+    height: 150px;
   }
 }
 
@@ -499,16 +499,28 @@ th {
 
 .l-main {
   width: 100%;
+  min-height: calc(100vh - 100px - 30px);
 }
 
-.l-form {
+.l-menu {
+  width: 65%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .l-menu {
+    width: 100%;
+  }
+}
+
+.l-content {
   width: 50%;
   max-width: 500px;
   margin: 0 auto;
 }
 
 @media screen and (max-width: 767px) {
-  .l-form {
+  .l-content {
     width: 90%;
   }
 }
@@ -613,6 +625,7 @@ th {
 .c-gird__center {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 767px) {
@@ -738,6 +751,15 @@ th {
   }
 }
 
+.p-card__topImg {
+  background: red;
+  width: 60%;
+  height: 50vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .p-card__title {
   display: flex;
   justify-content: center;
@@ -768,8 +790,39 @@ th {
 
 .p-card__menu {
   width: 100%;
-  background: #008db1;
-  padding: 20px 10px;
+  border: 2px solid #b0b0b0;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .p-card__menu {
+    margin-bottom: 100px;
+    padding: 30px 12px;
+  }
+}
+
+.p-card__menu--title {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .p-card__menu--title {
+    display: inline;
+  }
+}
+
+.p-card__menu--price {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .p-card__menu--price {
+    display: inline;
+  }
 }
 
 .p-gird__main {
@@ -783,14 +836,14 @@ th {
 }
 
 .p-gird__header_container {
-  min-height: 100px;
+  height: 100px;
   width: 100%;
 }
 
 @media screen and (max-width: 767px) {
   .p-gird__header_container {
     padding: 20px 0;
-    min-height: 145px;
+    height: 150px;
   }
 }
 
@@ -821,14 +874,72 @@ th {
   right: 0;
 }
 
+.p-gird__top {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  margin-bottom: 300px;
+}
+
+@media screen and (max-width: 767px) {
+  .p-gird__top {
+    height: calc(100vh - 150px);
+    display: block;
+    margin-bottom: 150px;
+  }
+}
+
+.p-gird__topLogo {
+  width: 20%;
+  min-width: 200px;
+  background-color: #008db1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .p-gird__topLogo {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.p-gird__topImage {
+  width: 80%;
+}
+
+@media screen and (max-width: 767px) {
+  .p-gird__topImage {
+    width: 100%;
+    height: calc(100% - 200px);
+  }
+}
+
 .p-image__top {
   width: 100%;
-  height: 100vh;
-  z-index: 1;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 30% 0;
-     object-position: 30% 0;
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .p-image__top {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 30% 0;
+       object-position: 30% 0;
+  }
+}
+
+.p-image__logo {
+  width: 200px;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .p-image__logo {
+    width: 100px;
+  }
 }
 
 .p-image__menu {
@@ -858,21 +969,6 @@ th {
   .p-image__instagram {
     width: 100%;
     height: auto;
-  }
-}
-
-.p-image__logo {
-  width: 300px;
-  position: absolute;
-  left: calc(50% - 150px);
-  top: calc(50% - 200px - 200px);
-}
-
-@media screen and (max-width: 767px) {
-  .p-image__logo {
-    left: calc(50% - 100px);
-    top: calc(50% - 200px - 145px);
-    width: 200px;
   }
 }
 
@@ -936,11 +1032,48 @@ th {
 }
 
 .p-text__menu--title {
-  font-size: 2em;
+  font-size: 1.5em;
+  border-bottom: 3px solid #008db1;
+}
+
+@media screen and (max-width: 767px) {
+  .p-text__menu--title {
+    font-size: 1.25em;
+  }
 }
 
 .p-text__menu--content {
   font-size: 1em;
+  line-height: 2em;
+}
+
+@media screen and (max-width: 767px) {
+  .p-text__menu--content {
+    font-size: 0.875em;
+  }
+}
+
+.p-text__menu--time {
+  font-size: 0.875em;
+}
+
+@media screen and (max-width: 767px) {
+  .p-text__menu--time {
+    margin-top: 10px;
+  }
+}
+
+.p-text__menu--price {
+  font-size: 1em;
+  width: 50%;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 767px) {
+  .p-text__menu--price {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 
 .p-text__footer {
