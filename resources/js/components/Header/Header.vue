@@ -23,7 +23,7 @@
               <List title="Menu" url="menu" />
               <List title="Access" url="access" />
               <List title="Contact" url="/contact" />
-              <List title="News" url="/news" />
+              <!-- <List title="News" url="/news" /> -->
             </ul>
           </nav>
 

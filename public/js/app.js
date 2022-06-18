@@ -2930,8 +2930,6 @@ var render = function () {
                 _c("List", { attrs: { title: "Access", url: "access" } }),
                 _vm._v(" "),
                 _c("List", { attrs: { title: "Contact", url: "/contact" } }),
-                _vm._v(" "),
-                _c("List", { attrs: { title: "News", url: "/news" } }),
               ],
               1
             ),
