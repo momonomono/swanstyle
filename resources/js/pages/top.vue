@@ -23,7 +23,7 @@
            
 
         <Content title="SNS">
-            <Sns :myid="myid"/>
+            <Sns :myid="myid" :pictures="pictures"/>
         </Content>
     </div>
 </template>
@@ -43,7 +43,8 @@
         },
         props :{
             myid : String,
-            details : String
+            details : String,
+            pictures : String
         },
         mounted(){
             window.addEventListener('load',this.scrollAccess);

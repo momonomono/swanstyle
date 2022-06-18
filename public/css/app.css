@@ -987,6 +987,7 @@ th {
   width: 60px;
   height: 60px;
   text-align: center;
+  cursor: pointer;
 }
 
 .p-text__header {
@@ -1029,6 +1030,7 @@ th {
   color: #008db1;
   font-size: 30px;
   line-height: 100px;
+  cursor: pointer;
 }
 
 .p-text__menu--title {

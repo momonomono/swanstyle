@@ -14,20 +14,36 @@ class MainController extends Controller
 {
     
     public function top(){
+        $test = "";
+        $accessToken = env('INSTAGRAM_ACCESS_TOKEN');
+        $accessId = env('INSTAGRAM_ID');
+        $count = 1;
 
-        $details = [
-            'details' => Detail::get()
+        $test = $accessToken;
+
+        $baseUrl = "https://graph.facebook.com/v14.0/${accessId}?fields=media.limit(5){media_url}&access_token=${accessToken}";
+
+        $test = $baseUrl;
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $baseUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+        $responseText = curl_exec($ch);
+        $result = json_decode($responseText, true);
+    
+        // セッション終了
+        curl_close($ch);
+
+        $data = [
+            'details' => Detail::get(),
+            'data' => $result,
+            "test" => $test
         ];
 
-        
-        
 
-        
-
-        
-        
-
-        return view("top",$details);
+        return view("top",$data);
     }
 
     public function menu(){

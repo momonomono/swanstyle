@@ -567,7 +567,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    myid: String
+    myid: String,
+    pictures: String
   },
   components: {
     Detail: _SNSDetail_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -594,8 +595,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    myid: String
+  methods: {
+    clickJumpInstgram: function clickJumpInstgram() {
+      window.location.href = "https://www.instagram.com/__swanstyle.__/";
+    }
   }
 });
 
@@ -625,19 +628,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    pictures: String
+  },
   data: function data() {
     return {
       hooperSettings: {
@@ -647,6 +642,12 @@ __webpack_require__.r(__webpack_exports__);
         playSpeed: 4000
       }
     };
+  },
+  computed: {
+    encodePictures: function encodePictures() {
+      var encode_picuters = JSON.parse(this.pictures);
+      return encode_picuters.media.data;
+    }
   },
   components: {
     Hooper: hooper__WEBPACK_IMPORTED_MODULE_0__["Hooper"],
@@ -897,7 +898,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     myid: String,
-    details: String
+    details: String,
+    pictures: String
   },
   mounted: function mounted() {
     window.addEventListener('load', this.scrollAccess);
@@ -3276,7 +3278,11 @@ var render = function () {
     _c(
       "article",
       { staticClass: "u-align__center" },
-      [_c("Detail", { attrs: { myid: _vm.myid } }), _vm._v(" "), _c("Slider")],
+      [
+        _c("Detail", { attrs: { myid: _vm.myid } }),
+        _vm._v(" "),
+        _c("Slider", { attrs: { pictures: _vm.pictures } }),
+      ],
       1
     ),
   ])
@@ -3307,11 +3313,17 @@ var render = function () {
     _c("img", {
       staticClass: "p-logo__instagram",
       attrs: { src: "/img/instagram.png" },
+      on: { click: _vm.clickJumpInstgram },
     }),
     _vm._v(" "),
-    _c("p", { staticClass: "p-text__instagram" }, [
-      _vm._v("@" + _vm._s(_vm.myid)),
-    ]),
+    _c(
+      "p",
+      {
+        staticClass: "p-text__instagram",
+        on: { click: _vm.clickJumpInstgram },
+      },
+      [_vm._v("@__swanstyle.__")]
+    ),
   ])
 }
 var staticRenderFns = []
@@ -3344,40 +3356,14 @@ var render = function () {
         "Hooper",
         { attrs: { settings: _vm.hooperSettings } },
         [
-          _c("Slide", [
-            _c("img", {
-              staticClass: "p-image__instagram",
-              attrs: { src: "/img/esthetic_2.jpg" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("Slide", [
-            _c("img", {
-              staticClass: "p-image__instagram",
-              attrs: { src: "/img/no_image_square.jpg" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("Slide", [
-            _c("img", {
-              staticClass: "p-image__instagram",
-              attrs: { src: "/img/no_image_square.jpg" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("Slide", [
-            _c("img", {
-              staticClass: "p-image__instagram",
-              attrs: { src: "/img/no_image_square.jpg" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("Slide", [
-            _c("img", {
-              staticClass: "p-image__instagram",
-              attrs: { src: "/img/no_image_square.jpg" },
-            }),
-          ]),
+          _vm._l(_vm.encodePictures, function (picture, index) {
+            return _c("Slide", { key: index }, [
+              _c("img", {
+                staticClass: "p-image__instagram",
+                attrs: { src: picture.media_url },
+              }),
+            ])
+          }),
           _vm._v(" "),
           _c("hooper-navigation", {
             attrs: { slot: "hooper-addons" },
@@ -3389,7 +3375,7 @@ var render = function () {
             slot: "hooper-addons",
           }),
         ],
-        1
+        2
       ),
     ],
     1
@@ -3502,7 +3488,7 @@ var render = function () {
       "div",
       { staticClass: "c-gird__main u-pb-100" },
       [
-        _c("Title", { attrs: { title: "Menu" } }),
+        _c("Title", { attrs: { title: "MENU" } }),
         _vm._v(" "),
         _c(
           "section",
@@ -3589,7 +3575,7 @@ var render = function () {
       _c(
         "Content",
         { attrs: { title: "SNS" } },
-        [_c("Sns", { attrs: { myid: _vm.myid } })],
+        [_c("Sns", { attrs: { myid: _vm.myid, pictures: _vm.pictures } })],
         1
       ),
     ],

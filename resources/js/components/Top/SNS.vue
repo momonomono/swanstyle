@@ -4,7 +4,7 @@
     
     <Detail :myid="myid"/>
 
-    <Slider />
+    <Slider :pictures="pictures"/>
   </article>
 </div>
 </template>
@@ -16,6 +16,7 @@ import Slider from "./SNSSlider.vue";
 export default {
   props: {
     myid: String,
+    pictures : String
   },
   components: {
     Detail,

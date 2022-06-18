@@ -1,21 +1,10 @@
 <template>
 <div class="l-slider">
     <Hooper :settings="hooperSettings" >
-        <Slide >
-            <img class="p-image__instagram" src="/img/esthetic_2.jpg">
+        <Slide v-for="(picture ,index) in encodePictures" :key="index">
+            <img class="p-image__instagram" :src="picture.media_url">
         </Slide>
-        <Slide >
-            <img class="p-image__instagram" src="/img/no_image_square.jpg">
-        </Slide>
-        <Slide >
-            <img class="p-image__instagram" src="/img/no_image_square.jpg">
-        </Slide>
-        <Slide >
-            <img class="p-image__instagram" src="/img/no_image_square.jpg">
-        </Slide>
-        <Slide >
-            <img class="p-image__instagram" src="/img/no_image_square.jpg">
-        </Slide>
+        
 
         <hooper-navigation slot="hooper-addons"></hooper-navigation>
         <hooper-pagination slot="hooper-addons"></hooper-pagination>
@@ -32,6 +21,9 @@
     } from "hooper";
 
     export default {
+        props : {
+            pictures : String
+        },
         data : function(){
             return {
                 hooperSettings :{
@@ -40,6 +32,13 @@
                     autoPlay: true,
                     playSpeed : 4000
                 },
+            }
+        },
+        computed :{
+            encodePictures(){
+                const encode_picuters = JSON.parse(this.pictures);
+
+                return encode_picuters.media.data;
             }
         },
         components :{

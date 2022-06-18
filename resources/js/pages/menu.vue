@@ -2,7 +2,7 @@
 
     <div class="l-container">
         <div class="c-gird__main u-pb-100">
-            <Title title="Menu"/>
+            <Title title="MENU"/>
 
             <section class="l-menu u-mt-50 u-mb-30">
                 <Detail 
