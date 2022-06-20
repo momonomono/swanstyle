@@ -3,11 +3,8 @@
     &__top {
         width:100%;  
         height:100%;
-
-        @include mq(sp){
-            object-fit: cover;
-            object-position: 30% 0;
-        }
+        object-fit: cover;
+        object-position: 30% 0;
     }
 
     &__logo{

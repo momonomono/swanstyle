@@ -36,27 +36,32 @@
                     {
                         labelName : "名前",
                         inputName : "name",
-                        necessity : true
+                        necessity : true,
+                        type : "text"
                     },
                     {
                         labelName : "フリガナ",
                         inputName : "furigana",
-                        necessity : false
+                        necessity : false,
+                        type : "text"
                     },
                     {
                         labelName : "メールアドレス",
                         inputName : "mail",
-                        necessity : true
+                        necessity : true,
+                        type : "text"
                     },
                     {
                         labelName : "電話番号",
                         inputName : "phone_number",
-                        necessity : false
+                        necessity : false,
+                        type : "text"
                     },
                     {
                         labelName : "お問い合わせ",
                         inputName : "message",
-                        necessity : false
+                        necessity : false,
+                        type : "textarea"
                     }
                 ]
             }

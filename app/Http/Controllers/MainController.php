@@ -57,9 +57,11 @@ class MainController extends Controller
 
     public function contact(){
 
+        $data = [
+            'title' => Menu::get('title')
+        ];
 
-
-        return view('contact');
+        return view('contact',$data);
     }
 
     public function postContact(FormPostRequest $request){

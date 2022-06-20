@@ -25,11 +25,18 @@
         },
         props :{
             data : {
+                type : Object,
                 required : true
             },
             errors :{
+                type : Object,
                 required : false
             },
+            title :{
+                type : Object,
+                required : true
+            }
+
         },
         computed :{
             getErrMsg(){
