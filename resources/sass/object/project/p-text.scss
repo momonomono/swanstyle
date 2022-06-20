@@ -80,6 +80,20 @@
         }
     }
 
+    &__contact{
+        font-size:$size_ft__lg;
+        margin-bottom:30px;
+
+        &--telephone{
+            font-size:$size_ft__md;
+        }
+
+        &--number{
+            margin-left:30px;
+            font-size:$size_ft__2x;
+        }
+    }
+
     &__footer{
         color:#ffffff;
         text-align: center;

@@ -788,6 +788,12 @@ th {
   display: block;
 }
 
+.p-card__contact {
+  text-align: center;
+  margin-top: 50px;
+  padding: 100px 0;
+}
+
 .p-card__menu {
   width: 100%;
   border: 2px solid #b0b0b0;
@@ -1073,6 +1079,20 @@ th {
   }
 }
 
+.p-text__contact {
+  font-size: 1.25em;
+  margin-bottom: 30px;
+}
+
+.p-text__contact--telephone {
+  font-size: 1em;
+}
+
+.p-text__contact--number {
+  margin-left: 30px;
+  font-size: 2em;
+}
+
 .p-text__footer {
   color: #ffffff;
   text-align: center;
@@ -1114,6 +1134,10 @@ th {
 
 .u-bg__white {
   background: #ffffff;
+}
+
+.u-bg__gray {
+  background: #f0f0f0;
 }
 
 .u-mt-10 {

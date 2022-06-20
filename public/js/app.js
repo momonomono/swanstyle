@@ -717,15 +717,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -787,6 +778,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Menu_MenuDetail_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Menu/MenuDetail.vue */ "./resources/js/components/Menu/MenuDetail.vue");
 /* harmony import */ var _components_Title_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Title.vue */ "./resources/js/components/Title.vue");
+//
 //
 //
 //
@@ -3438,39 +3430,36 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "c-gird__main" }, [
-    _c(
-      "div",
-      { staticClass: "u-pb-100 l-content" },
-      [
-        _c("Title", { attrs: { title: "CONTACT" } }),
-        _vm._v(" "),
-        _c("form", { attrs: { method: "post" } }, [
-          _c("input", {
-            attrs: { type: "hidden", name: "_token" },
-            domProps: { value: _vm.csrf },
-          }),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "u-pt-50 u-pb-30" },
-            _vm._l(_vm.inputData, function (data, index) {
-              return _c("Input", {
-                key: index,
-                attrs: { data: data, errors: _vm.errors },
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c("button", { staticClass: "c-button__form" }, [_vm._v("送信")]),
-        ]),
-      ],
-      1
-    ),
+  return _c("div", { staticClass: "l-main" }, [
+    _c("div", { staticClass: "l-container" }, [
+      _c(
+        "div",
+        { staticClass: "c-gird__main" },
+        [_c("Title", { attrs: { title: "CONTACT" } }), _vm._v(" "), _vm._m(0)],
+        1
+      ),
+    ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "p-card__contact" }, [
+      _c("p", { staticClass: "p-text__contact" }, [
+        _vm._v("お電話でのお問い合わせ・ご予約"),
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "p-text__contact--telephone" }, [
+        _vm._v("\n          tel\n          "),
+        _c("strong", { staticClass: "p-text__contact--number" }, [
+          _vm._v("080-3388-8799"),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -3492,24 +3481,26 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "l-container" }, [
-    _c(
-      "div",
-      { staticClass: "c-gird__main u-pb-100" },
-      [
-        _c("Title", { attrs: { title: "MENU" } }),
-        _vm._v(" "),
-        _c(
-          "section",
-          { staticClass: "l-menu u-mt-50 u-mb-30" },
-          _vm._l(_vm.menus, function (menu, index) {
-            return _c("Detail", { key: index, attrs: { menu: menu } })
-          }),
-          1
-        ),
-      ],
-      1
-    ),
+  return _c("div", { staticClass: "l-main" }, [
+    _c("div", { staticClass: "l-container" }, [
+      _c(
+        "div",
+        { staticClass: "c-gird__main u-pb-100" },
+        [
+          _c("Title", { attrs: { title: "MENU" } }),
+          _vm._v(" "),
+          _c(
+            "section",
+            { staticClass: "l-menu u-mt-50 u-mb-30" },
+            _vm._l(_vm.menus, function (menu, index) {
+              return _c("Detail", { key: index, attrs: { menu: menu } })
+            }),
+            1
+          ),
+        ],
+        1
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []

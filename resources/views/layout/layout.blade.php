@@ -12,7 +12,7 @@
     <div id="app">
         <header-component></header-component>
 
-        <div class="l-main u-bg__main">
+        <div class="u-bg__main">
             <div class="l-header__space"></div>
 
             @yield('body')
