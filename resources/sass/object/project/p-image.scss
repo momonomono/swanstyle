@@ -15,7 +15,6 @@
             width:100px;
         }
     }
-    
 
     &__menu{
         display: block;
@@ -46,5 +45,9 @@
 
     &__slide{
         width:30px;
+    }
+
+    &__line{
+        width:80%;
     }
 }

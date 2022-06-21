@@ -1,19 +1,27 @@
 <template>
-<div class="l-main">
-  <div class="l-container">
-    <div class="c-gird__main">
-      <Title title="CONTACT" />
+  <div class="l-main">
+    <div class="l-container">
+      <div class="c-gird__main">
+        <Title title="CONTACT" />
 
-      <section class="p-card__contact">
-        <p class="p-text__contact">お電話でのお問い合わせ・ご予約</p>
-        <p class="p-text__contact--telephone">
-          tel
-          <strong class="p-text__contact--number">080-3388-8799</strong>
-        </p>
-      </section>
+        <div class="l-content">
+          <section class="p-card__contact">
+            <p class="p-text__contact">ご予約はお電話またはLINEにて承っております</p>
+
+            <div class="p-gird__reserve u-mt-100">
+              <p class="p-text__contact--telephone">
+                tel.
+                <strong class="p-text__contact--number">080-3388-8799</strong>
+              </p>
+
+              <img class="p-image__line u-mt-60" src="/img/line_account_2.png" />
+            </div>
+          </section>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>

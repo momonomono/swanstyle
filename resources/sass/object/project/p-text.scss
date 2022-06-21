@@ -81,16 +81,17 @@
     }
 
     &__contact{
-        font-size:$size_ft__lg;
-        margin-bottom:30px;
+        font-size:$size_ft__md;
+        text-align: center;
 
         &--telephone{
-            font-size:$size_ft__md;
+            font-size:$size_ft__lg;
         }
 
         &--number{
             margin-left:30px;
             font-size:$size_ft__2x;
+            color:$color-font__primary;
         }
     }
 

@@ -717,6 +717,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3446,15 +3454,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "p-card__contact" }, [
-      _c("p", { staticClass: "p-text__contact" }, [
-        _vm._v("お電話でのお問い合わせ・ご予約"),
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "p-text__contact--telephone" }, [
-        _vm._v("\n          tel\n          "),
-        _c("strong", { staticClass: "p-text__contact--number" }, [
-          _vm._v("080-3388-8799"),
+    return _c("div", { staticClass: "l-content" }, [
+      _c("section", { staticClass: "p-card__contact" }, [
+        _c("p", { staticClass: "p-text__contact" }, [
+          _vm._v("ご予約はお電話またはLINEにて承っております"),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "p-gird__reserve u-mt-100" }, [
+          _c("p", { staticClass: "p-text__contact--telephone" }, [
+            _vm._v("\n              tel.\n              "),
+            _c("strong", { staticClass: "p-text__contact--number" }, [
+              _vm._v("080-3388-8799"),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "p-image__line u-mt-60",
+            attrs: { src: "/img/line_account_2.png" },
+          }),
         ]),
       ]),
     ])
