@@ -6,11 +6,16 @@
             <p class="c-text__err u-mb-10">{{ getErrMsg }}</p>
         </div>
 
-        <input 
+        <input
+            v-if="checkDataType"
             type="text" 
-            class="c-input__bottom"
+            class="c-input__text"
             :name="data.inputName"
         >
+
+        <textarea class="c-input__area" v-else>
+
+        </textarea>
         
         
     </label>
@@ -29,14 +34,8 @@
                 required : true
             },
             errors :{
-                type : Object,
                 required : false
             },
-            title :{
-                type : Object,
-                required : true
-            }
-
         },
         computed :{
             getErrMsg(){
@@ -46,6 +45,10 @@
 
                 return this.errMsg[0];
             },
+            checkDataType(){
+                
+               return this.data.type == "text"
+            }
         }
     }
 </script>

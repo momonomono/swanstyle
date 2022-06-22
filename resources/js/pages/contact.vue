@@ -17,7 +17,16 @@
               <img class="p-image__line u-mt-60" src="/img/line_account_2.png" />
             </div>
           </section>
+
+          <div class="">
+            <Iquiries
+              :items="items"
+              :errors="errors"
+            />
+          </div>
         </div>
+
+
 
       </div>
     </div>
@@ -26,12 +35,12 @@
 
 <script>
 import Title from "../components/Title.vue";
-import Input from "../components/Contact/Input.vue";
+import Iquiries from "../components/Contact/Inquiries.vue";
 
 export default {
   data: function() {
     return {
-      inputData: [
+      items: [
         {
           labelName: "名前",
           inputName: "name",
@@ -76,7 +85,7 @@ export default {
   },
   components: {
     Title,
-    Input
+    Iquiries
   }
 };
 </script>
