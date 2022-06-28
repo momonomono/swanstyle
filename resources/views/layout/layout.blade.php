@@ -7,6 +7,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('/img/favicon_swanstyle.ico') }}">
     <meta name="keywords" content="エステ,多治見市,swanstyle,小顔マッサージ">
+    <meta name="description">
     <title>エステサロン SWANSTYLE </title>
 </head>
 <body>
