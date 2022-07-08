@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('/img/favicon_swanstyle.ico') }}">
-    <meta name="keywords" content="エステ,多治見市,swanstyle,小顔マッサージ">
-    <meta name="description">
-    <title>エステサロン SWANSTYLE </title>
+    <meta name="keywords" content="エステ,多治見市,swanstyle,スワンタイル,小顔マッサージ">
+    <meta name="description"　content="スワンスタイルは多治見市のエステサロンです。小顔マッサージや毛穴洗浄、ホワイトニング、インナーマッスルトレーニングなどお客様に合わせたサービスをご用意しております">
+    <title>エステサロン SWANSTYLE 多治見市 </title>
 </head>
 <body>
     <div id="app">
